@@ -31,8 +31,16 @@ class App extends Component {
     this.state = {showModal : false};
   }
 
+  componentDidMount() {
+    window.addEventListener('keydown', this.onCloseModal)
+  }
+
   onShowModal = () => {
-    this.setState({ showModal : !this.state.showModal })
+    this.setState({ showModal : true })
+  }
+
+  onCloseModal = () => {
+    this.setState({ showModal : false})
   }
 
 
@@ -46,10 +54,11 @@ class App extends Component {
                 </p>
               </div>
             {this.state.showModal ? (
-               <div id="dialogPlaceholder" role="dialog">
+               <div onClick={this.onCloseModal} id="dialogPlaceholder" role="dialog">
                <div>
                <dialog>
-                   <Modal>
+                   <Modal
+                        onRequestClose={this.onCloseModal} >
                       <Child />
                    </Modal>        
                  </dialog>
@@ -59,7 +68,7 @@ class App extends Component {
             ) : null }
   
           </section>
-                
+
       </div>
     );
   }
