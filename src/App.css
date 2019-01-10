@@ -27,11 +27,12 @@
 
 }
 .modal {
-  position: fixed;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: -webkit-center;
-  left: 50px;
-  margin: 50px;
-  width: 300px;
+  width: 250px;
   background-color: white;
   height: 30%;
 
