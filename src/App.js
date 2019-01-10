@@ -49,14 +49,14 @@ class App extends Component {
       <div className="App">
 
           <section>
-            <div id="sectionContent">
+            <div id="sectionContent" aria-hidden="false">
                 <p onClick={this.onShowModal}> In as name to here them deny wise this. As rapid woody my he me which. Men but they fail shew just wish next put. Led all visitor musical calling nor her. Pretended concluded did repulsive education smallness yet yet described. Had country man his pressed shewing. No gate dare rose he. Eyes year if miss he as upon. 
                 </p>
               </div>
             {this.state.showModal ? (
-               <div onClick={this.onCloseModal} id="dialogPlaceholder" role="dialog">
+               <div aria-label="Close" onClick={this.onCloseModal} id="dialogPlaceholder" role="dialog">
                <div>
-               <dialog>
+               <dialog tabIndex="-1">
                    <Modal
                         onRequestClose={this.onCloseModal} >
                       <Child />
